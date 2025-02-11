@@ -1,4 +1,6 @@
 // @ts-nocheck 
+const dotenv = require('dotenv')
+const dotenvExpand = require('dotenv-expand')
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -15,6 +17,8 @@ import CreationProvider from './components/context/CreationContext';
 import Header from './components/Header';
 import QuizList from './components/QuizList';
 import QuizProvider from './components/context/QuizContext';
+
+dotenvExpand.expand(dotenv.config())
 
 const router = createBrowserRouter([
   {
