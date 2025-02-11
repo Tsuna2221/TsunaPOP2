@@ -1,5 +1,7 @@
 import 'dotenv/config'
 
+require('dotenv').config()
+
 export const firebaseConfig = {
   databaseURL: import.meta.env.databaseURL || process.env.databaseURL,
   apiKey: import.meta.env.apiKey || process.env.apiKey, 
