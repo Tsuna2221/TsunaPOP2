@@ -2,22 +2,13 @@
 
 import { useEffect, useState } from 'react'
 
+import { firebaseConfig } from "../../config/config";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, orderByValue } from "firebase/database";
 import { getStorage, ref as storageRef, getDownloadURL } from "firebase/storage";
 import { Grid, MainWrapper } from './styles';
 import ItemQuiz from '../ItemQuiz';
 import Loader from '../Loader';
-
-const firebaseConfig = {
-  databaseURL: process.env.DATABASEURL,
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID,
-};
 
 const app = initializeApp(firebaseConfig);
 const storage = getStorage();

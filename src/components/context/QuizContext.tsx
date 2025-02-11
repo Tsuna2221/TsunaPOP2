@@ -3,21 +3,13 @@ import { createContext, Dispatch, useEffect, useState, useRef } from 'react'
 import { useImmer } from "use-immer";
 import { useParams } from 'react-router-dom';
 
+import { firebaseConfig } from "../../config/config";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { getStorage, ref as storageRef, getDownloadURL } from "firebase/storage";
 
 import { socket } from '../../config/socket';
 
-const firebaseConfig = {
-  databaseURL: process.env.DATABASEURL,
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID,
-};
 
 const app = initializeApp(firebaseConfig);
 const storage = getStorage();

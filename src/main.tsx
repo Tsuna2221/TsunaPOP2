@@ -15,8 +15,6 @@ import Header from './components/Header';
 import QuizList from './components/QuizList';
 import QuizProvider from './components/context/QuizContext';
 
-require('dotenv').config()
-
 const router = createBrowserRouter([
   {
     path: "/",
