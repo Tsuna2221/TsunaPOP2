@@ -4,9 +4,18 @@ import { v4 as uuidv4 } from 'uuid';
 import { createContext, useState, Dispatch } from 'react'
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../../config/config";
 import { getDatabase, ref as dbRef, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
+
+const firebaseConfig = {
+  databaseURL: process.env.DATABASEURL,
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
+};
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);

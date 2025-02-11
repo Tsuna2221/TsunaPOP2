@@ -1,9 +1,16 @@
 
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./config";
+
+const firebaseConfig = {
+  databaseURL: process.env.DATABASEURL,
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
+};
 
 const firebase = initializeApp(firebaseConfig);
-
-console.log({ firebase })
 
 export default firebase
